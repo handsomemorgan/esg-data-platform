@@ -1,4 +1,5 @@
 import { HashRouter, Routes, Route } from 'react-router-dom';
+import { LanguageProvider } from './context/LanguageContext';
 import Layout from './components/Layout';
 import Dashboard from './pages/Dashboard';
 import SupplyChain from './pages/SupplyChain';
@@ -11,19 +12,21 @@ import DisclosureOutput from './pages/DisclosureOutput';
 
 export default function App() {
   return (
-    <HashRouter>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/supply-chain" element={<SupplyChain />} />
-          <Route path="/suppliers" element={<Suppliers />} />
-          <Route path="/carbon" element={<CarbonDashboard />} />
-          <Route path="/environmental" element={<EnvironmentalPerformance />} />
-          <Route path="/risk-heatmap" element={<RiskHeatmap />} />
-          <Route path="/cap-tracking" element={<CAPTracking />} />
-          <Route path="/disclosure" element={<DisclosureOutput />} />
-        </Routes>
-      </Layout>
-    </HashRouter>
+    <LanguageProvider>
+      <HashRouter>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/supply-chain" element={<SupplyChain />} />
+            <Route path="/suppliers" element={<Suppliers />} />
+            <Route path="/carbon" element={<CarbonDashboard />} />
+            <Route path="/environmental" element={<EnvironmentalPerformance />} />
+            <Route path="/risk-heatmap" element={<RiskHeatmap />} />
+            <Route path="/cap-tracking" element={<CAPTracking />} />
+            <Route path="/disclosure" element={<DisclosureOutput />} />
+          </Routes>
+        </Layout>
+      </HashRouter>
+    </LanguageProvider>
   );
 }
