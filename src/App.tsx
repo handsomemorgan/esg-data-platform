@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Dashboard from './pages/Dashboard';
 import SupplyChain from './pages/SupplyChain';
@@ -11,7 +11,7 @@ import DisclosureOutput from './pages/DisclosureOutput';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Layout>
         <Routes>
           <Route path="/" element={<Dashboard />} />
@@ -24,6 +24,6 @@ export default function App() {
           <Route path="/disclosure" element={<DisclosureOutput />} />
         </Routes>
       </Layout>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
